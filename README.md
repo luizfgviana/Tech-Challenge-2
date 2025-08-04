@@ -25,7 +25,7 @@ O problema consiste em definir qual o valor ótimo das duas médias móveis que 
 Definir o valor ótimo das duas médias móveis que otimizem o retorno de operações de swing trade sobre o ativo ITSA4.
 
 ### Critérios de sucesso
-Espera-se que os resultados obtidos a partir dos parâmetros otimizados sejam superiores aos resultados obtidos pelo método de otimização chamado “busca exaustiva” para o mesmo ativo ao longo do mesmo período que resultaram em ganhos da ordem de R$ xxxxxxxxx.
+Espera-se que os resultados obtidos a partir dos parâmetros otimizados sejam superiores aos resultados obtidos pelo método de otimização chamado “busca exaustiva” para o mesmo ativo ao longo do mesmo período que resultaram em ganhos da ordem de R$ 107.710,00.
 Para conhecer mais sobre o método suas aplicações consulte o **Boletim de Mercado de Capitais da Unifor** no link https://unifor.br/nupe/boletim-mercado-de-capitais.
 
 ### Implementação
@@ -47,6 +47,7 @@ O código foi implementado em sete etapas, conforme descrito abaixo:
 ## ✨ Funcionalidades
 
 *   **Aquisição de Dados Históricos**: Utiliza a robusta biblioteca `yfinance` para baixar dados de OHLCV (Abertura, Máxima, Mínima, Fechamento, Volume) de ativos da B3 (bolsa brasileira) ou outras bolsas.
+*   **Resolve problema de colunas MultiIndex**: É muito comum no yfinance para múltiplos tickers ou para dados de ações. Caso não haja ao ajuste, o algoritmo não reconhece novas colunas geradas.
 *   **Estratégia de Cruzamento de Médias Móveis**:
     *   **Sinal de Compra**: Gerado quando a Média Móvel Rápida cruza a Média Móvel Lenta de baixo para cima.
     *   **Sinal de Venda**: Gerado quando a Média Móvel Rápida cruza a Média Móvel Lenta de cima para baixo (sinaliza o fechamento da posição).
